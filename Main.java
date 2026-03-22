@@ -2972,4 +2972,43 @@ public class Main{
         }
     }
 }*/
+import java.util.InputMismatchException;
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        //EXCEPTION HANDLING
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter 2 numbers to divide : ");
+        int x = 0, y = 0;
+        while(true){
+            try{
+            
+                if(x == 0){
+                    System.out.print("Enter first number : ");
+                    x = sc.nextInt();
+                }
+                if(x == 0)
+                throw new ArithmeticException();
 
+                if(y == 0){
+                    System.out.print("Enter second number : ");
+                    y = sc.nextInt();
+                }
+                if(y == 0)
+                throw new ArithmeticException();
+                break;
+            }catch(ArithmeticException e){
+                System.out.println("ANY THING DIVIDED BY 0 IS INFINITE");
+                // sc.next();
+            }catch(InputMismatchException e){
+                System.out.println("Enter only INTEGER NUMBES!");
+                sc.next();
+            }catch(Exception e){
+                System.out.println("Invalid. try again");
+            }
+        }
+        System.out.println(x/y);
+        sc.close();
+        
+    }
+}

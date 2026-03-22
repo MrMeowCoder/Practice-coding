@@ -5,6 +5,3 @@ public abstract class ATM {
     public abstract void withdraw();
     public abstract void deposit();
 }
-
-
-
