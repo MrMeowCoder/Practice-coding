@@ -3059,13 +3059,17 @@ public class Main{
             x = y = 0;
             try{
                 System.out.print("enter 2 numbers : ");
-                
-                num1 = sc.next();
-                x = Integer.parseInt(num1);
-            
-                num2 = sc.next();
-                y = Integer.parseInt(num2);
+                boolean notvalid1 = true;
+                if(notvalid1){
+                    num1 = sc.next();
+                    x = Integer.parseInt(num1);
+                }
+                notvalid1 = false;
 
+                if(notValid){
+                    num2 = sc.next();
+                    y = Integer.parseInt(num2);
+                }
                 notValid = false;
                 
             }catch(NumberFormatException e){
@@ -3078,7 +3082,15 @@ public class Main{
 
         System.out.println("num1 = "+x);
         System.out.println("num2 = "+y);
-
+        float div = 0;
+        try{
+            div = (float)x / y;
+        }catch(ArithmeticException e){
+            System.out.println("Cannot divide by 0");
+        }catch(Exception e){
+            System.out.println("Something went wrong "+e);
+        }
+        System.out.println("Devision of "+x + " & "+y+" is : "+div);
 
     }
 }
