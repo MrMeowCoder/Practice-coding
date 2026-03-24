@@ -2971,7 +2971,7 @@ public class Main{
             }
         }
     }
-}*/
+}/*
 import java.util.InputMismatchException;
 import java.util.Scanner;
 class Main{
@@ -3010,5 +3010,75 @@ class Main{
         System.out.println(x/y);
         sc.close();
         
+    }
+}
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+        int[] arr = {5,8,6,4,2};
+        System.out.println("SIZE OF THE ARRAY IS "+arr.length);
+
+        int x = 0;
+
+        boolean notvalid = true;
+        while(notvalid){
+            try{
+                System.out.print("ENTER THE INDEX NUMBER YOU WANT TO ACCESS (INDEXING STARTS FROM 0) : ");
+                x = scan.nextInt();
+
+                System.out.println("ARRAY INDEX "+x+" HAS THE VALUE : "+arr[x]);
+                notvalid = false;
+            }catch(ArrayIndexOutOfBoundsException e){
+                System.out.println("YOUR HAVE ENTERED "+x+" ENTER THE INDEX NUMBER ONLY FROM 0 TO 4 : ");
+            }catch(InputMismatchException e){
+                System.out.println("PLEASE ENTER ONLY THE INTEGER VALUES");
+                scan.nextLine();
+
+            }catch(Exception e){
+                System.out.println("Something went wrong : "+e);
+            }
+        }
+        System.out.println("PROGRAM ENDS HERE");
+        scan.close();
+    }
+}*/
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        boolean notValid = true;
+        int x = 0, y = x;
+        while(notValid){
+
+            String num1 = new String();
+            String num2 = new String();
+            x = y = 0;
+            try{
+                System.out.print("enter 2 numbers : ");
+                
+                num1 = sc.next();
+                x = Integer.parseInt(num1);
+            
+                num2 = sc.next();
+                y = Integer.parseInt(num2);
+
+                notValid = false;
+                
+            }catch(NumberFormatException e){
+                System.out.println("NUMBER FORMATTING IS INCORRECT. PLEASE ENTER ONLY INTEGER VALUES");
+                sc.nextLine();
+            }catch(Exception e){
+                System.out.println("Something went wrong : "+e);
+            }
+        }
+
+        System.out.println("num1 = "+x);
+        System.out.println("num2 = "+y);
+
+
     }
 }
